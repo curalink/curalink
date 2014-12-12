@@ -1,2 +1,15 @@
-<h1>links list</h1>
+<%= form_for :link, url: links_path do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
 
+  <p>
+    <%= f.label :uri %><br>
+    <%= f.text_area :uri %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
