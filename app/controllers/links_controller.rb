@@ -11,6 +11,10 @@ class LinksController < ApplicationController
     def show
         @link = Link.find(params[:id])
     end
+
+    def index
+        @links = Link.all
+    end
 private
   def link_params
     params.require(:link).permit(:title, :uri)
