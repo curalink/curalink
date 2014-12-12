@@ -29,6 +29,9 @@ gem 'spring',        group: :development
 #javascript (therubyracer)
 gem 'therubyracer'
 
+#url validator gem
+gem 'http_url_validation_improved'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
