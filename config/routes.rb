@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'front_page#index'
+  #root 'front_page#index'
+  #get '*path' => 'front_page#index'
+
+  root 'application#index'
+  get '*path' => 'application#index'
+
   resources :links
 
   # Example of regular route:
