@@ -6,11 +6,7 @@ class LinksController < ApplicationController
   def create
     @link = Link.new(link_params)
 
-  	if @link.save
-  	  redirect_to @link
-  	else
-  	  render 'new'
-  	end
+    @link.save ? redirect_to @link : render 'new'
   end
 
   def show
