@@ -1,30 +1,50 @@
 <div class="container">
   <h1>Add new link to share...</h1>
-  <%= form_for :link, url: links_path do |f| %>
-      <% if @link.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(@link.errors.count, "error") %> prohibited
-              this link from being saved:</h2>
-            <ul>
-              <% @link.errors.full_messages.each do |msg| %>
-                  <li><%= msg %></li>
+  <div class="bs-docs-section">
+    <div class="row">
+      <div class="well bs-component">
+        <%= form_for :link, :html => {:class => "form-horizontal"}, url: links_path do |f| %>
+            <fieldset>
+              <legend>Add some details about the resource you want to share...</legend>
+              <% if @link.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@link.errors.count, "error") %> prohibited
+                      this link from being saved:</h2>
+                    <ul>
+                      <% @link.errors.full_messages.each do |msg| %>
+                          <li><%= msg %></li>
+                      <% end %>
+                    </ul>
+                  </div>
               <% end %>
-            </ul>
-          </div>
-      <% end %>
-      <p>
-        <%= f.label :title %><br>
-        <%= f.text_field :title %>
-      </p>
+              <div class="form-group">
+                <%= f.label :title, :class => "col-lg-2 control-label" %>
+                <div class="col-lg-10">
+                  <%= f.text_field :title,
+                     {:class => "form-control",
+                      :placeholder => "Why do you think it is interesting?"} %>
+                </div>
+              </div>
 
-      <p>
-        <%= f.label :uri %><br>
-        <%= f.text_area :uri %>
-      </p>
+              <div class="form-group">
+                <%= f.label :uri, :class => "col-lg-2 control-label" %><br>
+                <div class="col-lg-10">
+                  <%= f.text_area :uri,
+                    {:class => "form-control",
+                     :placeholder => "http://something-interesting.com"} %>
+                </div>
+              </div>
 
-      <p>
-        <%= f.submit %>
-      </p>
-  <% end %>
+              <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                  <%= f.submit 'Save', :class => "btn btn-primary" %>
+                </div>
+              </div>
+            </fieldset>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
   <%= link_to 'Back', root_path %>
 </div>
