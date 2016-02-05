@@ -1,19 +1,29 @@
-<h1>Listing links</h1>
+<div class="container">
+  <h1>Listing links</h1>
+  <div class="bs-docs-section clearfix">
+    <div class="row">
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>URI</th>
-  </tr>
+      <table class="table table-striped table-hover ">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>URI</th>
+        </tr>
+        </thead>
+        <tbody>
+          <% @links.each_with_index do |link, index| %>
+            <tr>
+              <td><%= index %></td>
+              <td><%= link.title %></td>
+              <td><%= link.uri %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-  <% @links.each do |link| %>
-    <tr>
-      <td><%= link.title %></td>
-      <td><%= link.uri %></td>
-    </tr>
-  <% end %>
-
-</table>
-
-<br>
-<%= link_to 'Back', root_path %>
+      <br>
+      <%= link_to 'Back', root_path %>
+    </div>
+  </div>
+</div>
