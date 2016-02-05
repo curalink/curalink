@@ -30,7 +30,7 @@ gem 'spring',        group: :development
 gem 'therubyracer'
 
 #url validator gem
-gem 'http_url_validation_improved'
+gem 'valid_url'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
