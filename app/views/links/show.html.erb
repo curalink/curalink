@@ -1,14 +1,18 @@
-<div class="container">
-  <h1>A new link has been created...</h1>
+<div>
+  <div class="container">
+    <h1>A new link has been created...</h1>
 
-  <p>
-    <strong>Title:</strong>
-    <%= @link.title %>
-  </p>
+    <p>
+      <strong>Title:</strong>
+      <%= @link.title %>
+    </p>
 
-  <p>
-    <strong>URI:</strong>
-    <%= @link.uri %>
-  </p>
-  <%= link_to 'Back', root_path %>
+    <p>
+      <strong>URI:</strong>
+      <%= @link.uri %>
+    </p>
+    <%= link_to 'Back', root_path %>
+  </div>
 </div>
+
+<%= render 'layouts/navigationbar' %>

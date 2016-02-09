@@ -1,3 +1,5 @@
+<%= render 'layouts/navigationbar' %>
+
 <div class="container">
   <h1>Add new link to share...</h1>
   <div class="bs-docs-section">
@@ -21,8 +23,8 @@
                 <%= f.label :title, :class => "col-lg-2 control-label" %>
                 <div class="col-lg-10">
                   <%= f.text_field :title,
-                     {:class => "form-control",
-                      :placeholder => "Why do you think it is interesting?"} %>
+                                   {:class => "form-control",
+                                    :placeholder => "Why do you think it is interesting?"} %>
                 </div>
               </div>
 
@@ -30,15 +32,15 @@
                 <%= f.label :uri, :class => "col-lg-2 control-label" %><br>
                 <div class="col-lg-10">
                   <%= f.text_area :uri,
-                    {:class => "form-control",
-                     :placeholder => "http://something-interesting.com"} %>
+                                  {:class => "form-control",
+                                   :placeholder => "http://something-interesting.com"} %>
                 </div>
               </div>
 
               <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
-                  <%= button_tag "Clear", type: :reset, :class=> "btn btn-default" %>
-                  <%= link_to "Cancel", root_path, {:class=>"btn btn-default"}  %>
+                  <%= button_tag "Clear", type: :reset, :class => "btn btn-default" %>
+                  <%= link_to "Cancel", root_path, {:class => "btn btn-default"} %>
                   <%= f.submit 'Save', :class => "btn btn-primary" %>
                 </div>
               </div>
