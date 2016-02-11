@@ -9,6 +9,8 @@
           <th>#</th>
           <th>Title</th>
           <th>URI</th>
+          <th>Added on</th>
+          <th>Added by</th>
         </tr>
         </thead>
         <tbody>
@@ -17,6 +19,8 @@
               <td><%= index %></td>
               <td><%= link.title %></td>
               <td><%= link.uri %></td>
+              <td><%= link.created_at %></td>
+              <td><%= link.added_by %></td>
             </tr>
           <% end %>
         </tbody>
