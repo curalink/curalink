@@ -11,3 +11,86 @@
     <%= @link.uri %>
   </p>
 </div>
+
+<div class="container">
+  <dl class="dl-horizontal">
+    <dt><strong class="label label-info">Title</strong></dt>
+    <dd><%= @link.title %></dd>
+    <dt><strong>Uri</strong></dt>
+    <dd><%= @link.uri %></dd>
+    <dt><strong>Author:</strong></dt>
+    <dd><%= @link.added_by %></dd>
+    <dt><strong>Created at:</strong></dt>
+    <dd><%= @link.created_at %></dd>
+    <dt><strong>Updated at:</strong></dt>
+    <dd><%= @link.updated_at %></dd>
+  </dl>
+</div>
+
+
+<div class="container">
+    <div class="span-2 display-label">
+      <strong>Title</strong>
+    </div>
+    <div class="span-4 display-values">
+      <%= @link.title %>
+  </div>
+
+    <div class="display-label">
+      <strong>URI</strong>
+    </div>
+    <div class="display-values">
+        <%= @link.uri %>
+    </div>
+
+<!--
+  <div class="row">
+    <div class="span-2 display-label">
+      <strong class="control-label">Added by:</strong>
+    </div>
+    <div class="span-4 display-values">
+    </div>
+  </div>
+
+  <div class="row">
+  <strong class="col-lg-2 control-label">Added on:</strong>
+  <div class="col-lg-10">
+  </div>
+    </div>
+
+  <div class="row">
+  <strong class="col-lg-2 control-label">Last update:</strong>
+  <div class="col-lg-10">
+  </div>
+    </div>
+-->
+</div>
+
+<div class="container">
+  <br><br>
+  <div>table arrangement:</div>
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <td>Name</td>
+        <td><%= @link.title %></td>
+      </tr>
+      <tr>
+        <td>URI</td>
+        <td><%= @link.uri%></td>
+      </tr>
+      <tr>
+        <td>Author</td>
+        <td><%= @link.added_by%></td>
+      </tr>
+      <tr>
+        <td>Created on:</td>
+        <td><%= @link.created_at%></td>
+      </tr>
+      <tr>
+        <td>Updated:</td>
+        <td><%= @link.updated_at%></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
