@@ -1,11 +1,7 @@
 <div class="container">
   <h1>Link details:</h1>
 
-  <%= form_for :link, :html => {:class => "form-horizontal form-control-static"}, url: links_path do |f| %>
-      <fieldset>
-        <% if false %>
-        <legend>Add some details about the resource you want to share...</legend>
-            <% end %>
+  <%= form_for :link, :html => {:class => "form-horizontal"}, url: links_path do |f| %>
         <div class="form-group">
           <%= f.label :title, :class => "col-lg-2 control-label" %>
           <div class="col-lg-10">
@@ -15,7 +11,7 @@
           </div>
         </div>
 
-        <div class="form-group form-control-static">
+        <div class="form-group">
           <%= f.label :uri, :class => "col-lg-2 control-label" %><br>
           <div class="col-lg-10">
             <%= f.text_field :uri,
@@ -24,20 +20,18 @@
           </div>
         </div>
 
-        <div class="form-group form-control-static">
+        <div class="form-group">
           <%= f.label :added_by, :class => "col-lg-2 control-label" %><br>
           <div class="col-lg-10">
             <%= f.text_field :added_by,
                              {:class => "form-control uneditable-input",
                               :readonly => true,
-
-                              :value => @link.added_by,
                               :placeholder => "author unknown"
                              } %>
           </div>
         </div>
 
-        <div class="form-group form-control-static">
+        <div class="form-group">
           <%= f.label :created_at, :class => "col-lg-2 control-label" %><br>
           <div class="col-lg-10">
             <%= f.text_field :created_at,
@@ -47,7 +41,7 @@
           </div>
         </div>
 
-        <div class="form-group form-control-static">
+        <div class="form-group">
           <%= f.label :updated_at, :class => "col-lg-2 control-label" %><br>
           <div class="col-lg-10">
             <%= f.text_field :updated_at,
@@ -56,6 +50,5 @@
                               :value => @link.updated_at.to_formatted_s(:db)} %>
           </div>
         </div>
-      </fieldset>
   <% end %>
 </div>
