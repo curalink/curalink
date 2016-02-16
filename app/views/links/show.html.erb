@@ -1,6 +1,7 @@
 <div class="container">
   <h1>Link details:</h1>
 
+  <% if false %>
   <p>
     <strong>Title:</strong>
     <%= @link.title %>
@@ -10,8 +11,10 @@
     <strong>URI:</strong>
     <%= @link.uri %>
   </p>
+      <% end %>
 </div>
 
+<% if false %>
 <div class="container">
   <dl class="dl-horizontal">
     <dt><strong class="label label-info">Title</strong></dt>
@@ -26,71 +29,179 @@
     <dd><%= @link.updated_at %></dd>
   </dl>
 </div>
-
+<% end %>
 
 <div class="container">
-    <div class="span-2 display-label">
+  <% if false %>
+  <div class="row">
+    <div class="col-lg-2 display-label">
       <strong>Title</strong>
     </div>
-    <div class="span-4 display-values">
-      <%= @link.title %>
+    <div class="col-lg-10 display-values">
+      <p>
+        <%= @link.title %>
+      </p>
+    </div>
   </div>
 
-    <div class="display-label">
-      <strong>URI</strong>
+  <div class="row">
+    <div class="col-lg-2 display-label">
+      <strong>URI:</strong>
     </div>
-    <div class="display-values">
+    <div class="col-lg-10 display-values">
+      <p>
         <%= @link.uri %>
-    </div>
-
-<!--
-  <div class="row">
-    <div class="span-2 display-label">
-      <strong class="control-label">Added by:</strong>
-    </div>
-    <div class="span-4 display-values">
+      </p>
     </div>
   </div>
 
   <div class="row">
-  <strong class="col-lg-2 control-label">Added on:</strong>
-  <div class="col-lg-10">
-  </div>
+    <div class="col-lg-2 display-label">
+      <strong>Author:</strong>
     </div>
+    <div class="col-lg-10 display-values">
+      <p>
+        <%= @link.added_by || "<unknown>" %>
+      </p>
+    </div>
+  </div>
 
   <div class="row">
-  <strong class="col-lg-2 control-label">Last update:</strong>
-  <div class="col-lg-10">
-  </div>
+    <div class="col-lg-2 display-label">
+      <strong>Created at:</strong>
     </div>
--->
+    <div class="col-lg-10 display-values">
+      <p>
+        <%= @link.created_at %>
+      </p>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-lg-2 display-label">
+      <strong>Updated at:</strong>
+    </div>
+    <div class="col-lg-10 display-values">
+      <p>
+        <%= @link.updated_at %>
+      </p>
+    </div>
+  </div>
+
+      <% end %>
+  <!--
+    <div class="row">
+      <div class="span-2 display-label">
+        <strong class="control-label">Added by:</strong>
+      </div>
+      <div class="span-4 display-values">
+      </div>
+    </div>
+
+    <div class="row">
+    <strong class="col-lg-2 control-label">Added on:</strong>
+    <div class="col-lg-10">
+    </div>
+      </div>
+
+    <div class="row">
+    <strong class="col-lg-2 control-label">Last update:</strong>
+    <div class="col-lg-10">
+    </div>
+      </div>
+  -->
 </div>
 
+<% if false %>
 <div class="container">
   <br><br>
   <div>table arrangement:</div>
   <table class="table table-striped">
     <tbody>
-      <tr>
-        <td>Name</td>
-        <td><%= @link.title %></td>
-      </tr>
-      <tr>
-        <td>URI</td>
-        <td><%= @link.uri%></td>
-      </tr>
-      <tr>
-        <td>Author</td>
-        <td><%= @link.added_by%></td>
-      </tr>
-      <tr>
-        <td>Created on:</td>
-        <td><%= @link.created_at%></td>
-      </tr>
-      <tr>
-        <td>Updated:</td>
-        <td><%= @link.updated_at%></td>
-      </tr>
+    <tr>
+      <td>Name</td>
+      <td><%= @link.title %></td>
+    </tr>
+    <tr>
+      <td>URI</td>
+      <td><%= @link.uri %></td>
+    </tr>
+    <tr>
+      <td>Author</td>
+      <td><%= @link.added_by %></td>
+    </tr>
+    <tr>
+      <td>Created on:</td>
+      <td><%= @link.created_at %></td>
+    </tr>
+    <tr>
+      <td>Updated:</td>
+      <td><%= @link.updated_at %></td>
+    </tr>
     </tbody>
   </table>
+</div>
+<% end %>
+
+<div class="container">
+  <%= form_for :link, :html => {:class => "form-horizontal form-control-static"}, url: links_path do |f| %>
+      <fieldset>
+        <% if false %>
+        <legend>Add some details about the resource you want to share...</legend>
+            <% end %>
+        <div class="form-group">
+          <%= f.label :title, :class => "col-lg-2 control-label" %>
+          <div class="col-lg-10">
+            <%= f.text_field :title,
+                             {:class => "form-control",
+                              :readonly => true,
+                              :placeholder => "Why do you think it is interesting?"} %>
+          </div>
+        </div>
+
+        <div class="form-group form-control-static">
+          <%= f.label :uri, :class => "col-lg-2 control-label" %><br>
+          <div class="col-lg-10">
+            <%= f.text_field :uri,
+                             {:class => "form-control",
+                              :readonly => true,
+                              :placeholder => "http://something-interesting.com"} %>
+          </div>
+        </div>
+
+        <div class="form-group form-control-static">
+          <%= f.label :added_by, :class => "col-lg-2 control-label" %><br>
+          <div class="col-lg-10">
+            <%= f.text_field :added_by,
+                             {:class => "form-control uneditable-input",
+                              :readonly => true,
+                              :value => @link.added_by || "<unknown>",
+                              :placeholder => "http://something-interesting.com"} %>
+          </div>
+        </div>
+
+        <div class="form-group form-control-static">
+          <%= f.label :created_at, :class => "col-lg-2 control-label" %><br>
+          <div class="col-lg-10">
+            <%= f.text_field :created_at,
+                             {:class => "form-control uneditable-input",
+                              :readonly => true,
+                              :value => @link.created_at.to_formatted_s(:db),
+                              :placeholder => "http://something-interesting.com"} %>
+          </div>
+        </div>
+
+        <div class="form-group form-control-static">
+          <%= f.label :updated_at, :class => "col-lg-2 control-label" %><br>
+          <div class="col-lg-10">
+            <%= f.text_field :updated_at,
+                             {:class => "form-control uneditable-input",
+                              :readonly => true,
+                              :value => @link.updated_at.to_formatted_s(:db),
+                              :placeholder => "http://something-interesting.com"} %>
+          </div>
+        </div>
+      </fieldset>
+  <% end %>
 </div>
