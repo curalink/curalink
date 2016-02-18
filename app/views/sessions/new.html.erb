@@ -1,19 +1,29 @@
-<% provide(:title, "Log in") %>
-<h1>Log in</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: login_path) do |f| %>
+<div class="container">
 
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control' %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1>Log in</h1>
+    <div class="well bs-component">
 
-        <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control' %>
+        <%= form_for(:session, :html => {:class => "form-horizontal"}, url: login_path) do |f| %>
+            <div class="form-group">
+              <%= f.label :email %>
+              <%= f.email_field :email, class: 'form-control' %>
+            </div>
 
-        <br>
-        <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
+            <div class="form-group">
+              <%= f.label :password %>
+              <%= f.password_field :password, class: 'form-control' %>
+            </div>
 
+            <div class="form-group">
+              <%= f.submit "Log in", class: "btn btn-primary" %>
+            </div>
+        <% end %>
+
+      </div>
+    </div>
   </div>
+
 </div>
