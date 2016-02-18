@@ -21,27 +21,27 @@
         <div class="form-group">
           <%= f.label :added_by, :class => "col-lg-2 control-label" %>
           <div class="col-lg-10">
-            <p class="form-control"><%= @link.added_by || "<unknown>" %></p>
+            <p class="form-control">
+              <%= @link.added_by || "<unknown>" %>
+            </p>
           </div>
         </div>
 
         <div class="form-group">
           <%= f.label :created_at, :class => "col-lg-2 control-label" %>
           <div class="col-lg-10">
-            <%= f.text_field :created_at,
-                             {:class => "form-control uneditable-input",
-                              :readonly => true,
-                              :value => @link.created_at.to_formatted_s(:db)} %>
+            <p class="form-control">
+              <%= @link.created_at.to_formatted_s(:db) %>
+            </p>
           </div>
         </div>
 
         <div class="form-group">
           <%= f.label :updated_at, :class => "col-lg-2 control-label" %>
           <div class="col-lg-10">
-            <%= f.text_field :updated_at,
-                             {:class => "form-control uneditable-input",
-                              :readonly => true,
-                              :value => @link.updated_at.to_formatted_s(:db)} %>
+            <p class="form-control">
+              <%= @link.updated_at.to_formatted_s(:db) %>
+            </p>
           </div>
         </div>
   <% end %>
