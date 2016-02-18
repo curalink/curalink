@@ -6,6 +6,7 @@ The intent for creating Curalink was to make sharing links to interesting resour
 Curalink doesn't try to replace or be so big and flexible as digg/reddit. 
 
 Curalink's planned features: 
+
 1. Adding links
 2. Searching for links
 3. Notifications (per user) 
