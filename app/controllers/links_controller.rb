@@ -14,7 +14,7 @@ class LinksController < ApplicationController
   end
 
   def index
-      @links = Link.all
+      @links = Link.order("id DESC").all
   end
 private
   def link_params
