@@ -14,9 +14,16 @@ class LinksController < ApplicationController
   end
 
   def index
+    search = params[:search]
+    if search.blank?
       @links = Link.order("id DESC").all
+    else
+      links = Link.arel_table
+      @links = Link.where(links[:title].matches("%#{search}%"))
+    end
   end
-private
+
+    private
   def link_params
     params.require(:link).permit(:title, :uri)
   end
