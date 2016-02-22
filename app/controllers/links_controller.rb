@@ -19,7 +19,9 @@ class LinksController < ApplicationController
       @links = Link.order("id DESC").all
     else
       links = Link.arel_table
-      @links = Link.where(links[:title].matches("%#{search}%"))
+      @links1 = Link.where(links[:title].matches("%#{search}%"))
+      @links2 = Link.where(links[:uri].matches("%#{search}%"))
+      @links = (@links1 + @links2).uniq
     end
   end
 
