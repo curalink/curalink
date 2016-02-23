@@ -32,7 +32,7 @@
               <td><%= index %></td>
               <td><%= link.title %></td>
               <td><a href="<%= link.uri %>" target="_blank"><%= link.uri %></a>  </td>
-              <td><%= link_to ">>", link_path(link) %></td>
+              <td><%= link_to link_path(link) do %><i class="glyphicon glyphicon-edit"></i> <% end %></td>
             </tr>
           <% end %>
 
